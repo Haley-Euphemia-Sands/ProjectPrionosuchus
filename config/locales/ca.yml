@@ -40,15 +40,6 @@ ca:
     posts: Toots
     remote_follow: Seguir
     unfollow: Deixar de seguir
-  activitypub:
-    activity:
-      announce:
-        name: "%{account_name} shared an activity."
-      create:
-        name: "%{account_name} created a note."
-    outbox:
-      name: "%{account_name}'s Outbox"
-      summary: A collection of activities from user %{account_name}.
   admin:
     accounts:
       are_you_sure: Estàs segur?
