@@ -1,5 +1,6 @@
 object false
 
+# basic JSON initialisation
 node(:meta) do
   {
     streaming_api_base_url: @streaming_api_base_url,
@@ -14,6 +15,7 @@ node(:meta) do
   }
 end
 
+# composing posts
 node(:compose) do
   {
     me: current_account.id,
@@ -21,6 +23,7 @@ node(:compose) do
   }
 end
 
+# account stuff
 node(:accounts) do
   store = {}
   store[current_account.id] = partial('api/v1/accounts/show', object: current_account)
@@ -28,6 +31,7 @@ node(:accounts) do
   store
 end
 
+# attaching media to post
 node(:media_attachments) do
   {
     accept_content_types: MediaAttachment::IMAGE_MIME_TYPES + MediaAttachment::VIDEO_MIME_TYPES
